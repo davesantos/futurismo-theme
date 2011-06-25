@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--Version 3.6.0 -->	
+		<title>{Title}{block:PostTitle} &mdash; {PostTitle}{/block:PostTitle}</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="color:Background" content="#AF9970"/>
+		<meta name="color:Text" content="#fff" />
+		<meta name="color:Links" content="#000"/>
+		<meta name="color:Date" content="#000"/>
+		<meta name="color:Tags" content="#fff"/>
+		<meta name="color:Search Text" content="#000"/>
+		<meta name="color:Search Background" content="#fff"/>
+		<meta name="font:Body" content='"Courier New",Courier,monospace'>
+		<meta name="text:Permalink" content="Permalink">
+		<meta name="if:Show Search" content="1">
+		<meta name="if:Show Tags" content="1">
+		<meta name="if:Show Album Art" content="1">
+		<meta name="if:Show Theme Name" content="1" />
+		<meta name="if:Show Tumblr Controls" content="1">
+		<meta name="if:Push Date" content="1" />
+		<meta name="if:Light Audio Player" content="1">		
+		<meta name="image:Logo" content="">
+		<meta name="description" content="{MetaDescription}" />
+		<link rel="shortcut icon" href="{Favicon}"/>
+		<link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+		<link rel="stylesheet" href="http://static.tumblr.com/n2yg7bp/0xvkkpend/reset.css" media="all" type="text/css" />
+		<style type="text/css">
+			<!--
+			body {background:{color:Background};color:{color:Text};}
+			body, form#search input {font-family:{font:Body};}
+			a {color:{color:Links};}
+			hr{clear:both;border-color:{color:Links};border-style:solid;border-width:1px 0 0;display:block;height:0;margin:-1px 0 20px;}
+			textarea,input {background:{color:Search Background};}
+			.meta p > a {color:{color:Date};}
+			.post ul.tags li, .post ul.tags li a {color:{color:Tags};}
+			.post .text blockquote {border-left:1px dotted {color:Links};}
+			.post .link h2 > a {border-bottom:3px solid {color:Links};}
+			form#search input {color:{color:Links};background:{color:Background};}
+			form#search input.focus {color:{color:Search Text};background:{color:Search Background};}
+			{block:IfNotShowTumblrControls}
+			iframe#tumblr_controls{display:none;}
+			{/block:IfNotShowTumblrControls}
+			{block:IfPushDate}
+			.meta {left:-270px;position:absolute;width:250px;}
+			{/block:IfPushDate}
+			{CustomCSS}
+			
+			/*Type*/
+			body {letter-spacing:0.03em;line-height:20px;word-spacing:0.08em;}
+				body, form#search input {font-size:14px;}
+				#header form#search input.focus {font-family:Monaco,Consolas,Courier,monospace;font-size:12px;}
+				a {text-decoration:none;}
+				a img:hover {opacity:0.9;}
+				strong {font-weight:bold;}
+				em {font-style:italic;}
+				textarea,input {border-color:#7c7c7c #c3c3c3 #ddd #9a9a9a;padding:4px;}
+				h1#logo{font-size:1.5714285714285714em;line-height:0.9090909090909091em;margin-bottom:0.9090909090909091em}
+				h1,h2,h3, .post .quote blockquote {font-family:Futura,"Century Gothic",AppleGothic,sans-serif;word-spacing:-0.15em;font-weight:bold;font-size:19px;line-height:1.052631578947369em;margin-bottom:1.052631578947369em}
+			/*Structure*/
+			html, body {height:100%;}
+			#wrapper,#footer {width:1060px;margin:0 auto;display:block;}
+				#wrapper {margin-bottom:-60px;min-height:100%;height:auto !important;height:100%;overflow:hidden;}
+				#footer, .push {height:20px;}
+				#footer {padding:20px 0;}
+				#footer p {margin:0 0 0 270px;}
+				#header {min-height:80px;height:auto;padding:40px 0;}
+					h1#logo {margin:0;width:700px;}
+					ul#nav {left:900px;position:absolute;top:40px;width:180px;z-index:9999;}
+					form#search input {border:none;padding:0;width:160px;}
+					form#search input.focus {border-width:1px;padding:4px;width:152px;}
+				#description {display:none;width:790px;}
+					#description div, .post, .result {margin:0 0 40px 270px;width:520px;}
+					#description p > p,#description p {margin:0;}
+					#description img {float:left;margin:0 12px 32px 0;}
+				#content {padding:20px 0 40px;width:auto;}			
+					.post {width:520px;}
+					.post img {max-width:520px;}
+					.metatags {left:-270px;position:absolute;width:250px;}
+						p, ol, ul, blockquote, pre, td, th, label,
+						.post .caption,
+						.post .conversation,
+						.post .conversation .line,
+						.post .link,
+						.post .photo img,
+						.post .quote,
+						.post .text,
+						.post .video,
+						.post .video embed,
+						.post .video object > embed,
+						.post .audio {margin:0 0 20px;}
+						.post .audio .audio_player {height:40px;}
+						.post .answer_form_container {margin-top:20px;}
+					.post ul {list-style:disc;margin-left:20px;}
+						.post ul.tags {list-style:none;margin:0;position:absolute;top:80px;width:160px;}
+						.post ul.tags li {text-transform:lowercase;}
+						.post ul.tags li:before {content:"- ";}
+					.post ol {list-style:decimal;margin-left:25px;}
+					.post .audio {overflow:hidden;}
+					.post .audio .albumart{float:left;margin:0;overflow:hidden;}
+					.post .audio .albumart img{margin-right:20px;max-width:160px;}
+					.post .chat ul {list-style:none;margin:0 0 20px;}
+					.post .chat ul.conversation li .person {position:absolute;font-weight:bold;}
+					.post .chat ul.conversation li .person-said {display:block;left:180px;position:relative;width:340px;}
+					.post .quote .source {margin-left:250px;}
+					.post .text p > img {margin:0 10px;}
+					.post .text blockquote {border-left:1px dotted;font-style:italic;padding:0 0 0 20px;}
+					#pagination {height:20px;margin-left:630px;overflow:hidden;padding:20px 0;width:250px;}
+						a.prev, a.next, span.pages {position:absolute;}
+						a.prev {left:0px;}
+						span.pages {left:180px;}
+						a.next {left:90px;}
+		</style>
+		<script type="text/javascript" src="http://static.tumblr.com/cqczc5x/YIzlmrxzr/cufon-yui.js"></script>
+		<script type="text/javascript" src="http://static.tumblr.com/cqczc5x/wIeljrg7k/futura.js"></script>
+    	<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="header">
+				{block:IfLogoImage}<h1 id="logo"><a href="/"><img src="{image:Logo}" alt="{Title}"/></a></h1>{/block:IfLogoImage}
+		        {block:IfNotLogoImage}<h1 id="logo"><a href="/">{Title}</a></h1>{/block:IfNotLogoImage}
+				<ul id="nav">
+					{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}
+					<li><a href="/archive">Archive</a></li>
+					{block:IfShowSearch}
+					<form id="search" action="/search" method="get">
+						<input type="text" name="q" value="{SearchQuery}" />
+						<input type="hidden" value="Search" />
+					</form>
+					{/block:IfShowSearch}
+				</ul>
+			</div>
+			{block:Description}
+			<div id="description">
+				<a href="#" id="closePortrait"><img src="{PortraitURL-128}" alt="" /></a>
+				<div>{Description}</div>
+			</div>
+			{/block:Description}
+			
+			<div id="content">
+				{block:SearchPage}
+				<p class="result">{block:NoSearchResults}Sorry! {/block:NoSearchResults}<strong>{SearchResultCount}</strong> result(s) for <strong>{SearchQuery}</strong></p>
+				{/block:SearchPage}
+
+				{block:TagPage}
+				<p class="result">Posts tagged with <strong>{Tag}</strong></p>
+				{/block:TagPage}
+
+				{block:Posts}
+				<div class="post {TagsAsClasses}">
+
+				<div class="meta">
+					{block:NewDayDate}
+					<p class="date">{block:IndexPage}<a href="{Permalink}" class="permalink">{/block:IndexPage}{block:PermalinkPage}<a href="javascript:window.history.go(-1)">{/block:PermalinkPage}{Month} {DayOfMonth}, {Year}</a></p>
+					{/block:NewDayDate}
+					{block:SameDayDate}
+					<p>{block:IndexPage}<a href="{Permalink}" class="permalink">{text:Permalink}</a>{/block:IndexPage}</p>
+					{/block:SameDayDate}
+				</div>
+				{block:PermalinkPage}
+				<div class="metatags">
+					{block:IfShowTags}{block:HasTags}
+					<ul class="tags">
+						{block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}
+					</ul>
+					{/block:HasTags}{/block:IfShowTags}
+				</div>
+				{/block:PermalinkPage}
+				
+				{block:Text}
+				<div class="text">
+					{block:Title}<h2>{Title}</h2>{/block:Title}
+					{Body}
+				</div>
+				{/block:Text}
+				{block:Quote}
+				<div class="quote">
+					<blockquote class="words {Length}">{Quote}</blockquote>
+					{block:Source}<p class="source">&mdash; {Source}</p>{/block:Source}
+				</div>
+				{/block:Quote}
+				{block:Link}
+				<div class="link">
+					<h2><a href="{URL}">{Name}</a></h2>
+					{block:Description}{Description}{/block:Description}
+				</div>
+				{/block:Link}
+				{block:Video}
+				<div class="video">
+					{Video-500}
+					{block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+				</div>
+				{/block:Video}
+				{block:Audio}
+				<div class="audio">
+					{block:IfShowAlbumArt}{block:AlbumArt}<p class="albumart"><img src="{AlbumArtURL}" alt="" /></p>{/block:AlbumArt}{/block:IfShowAlbumArt}
+					{block:IfLightAudioPlayer}{AudioPlayerWhite}{/block:IfLightAudioPlayer}
+					{block:IfNotLightAudioPlayer}{AudioPlayerBlack}{/block:IfNotLightAudioPlayer}
+					{block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+				</div>
+				{/block:Audio}
+				{block:Photo}
+				<div class="photo">
+					{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>{LinkCloseTag}
+					{block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+				</div>
+				{/block:Photo}
+				{block:Chat}
+				<div class="chat">
+					{block:Title}<h2>{Title}</h2>{/block:Title}
+					<ul class="conversation">
+						{block:Lines}
+						<li class="line {Alt}">
+							{block:Label}<span class="person">{Label}</span>{/block:Label}<span class="person-said">{Line}</span>
+						</li>
+						{/block:Lines}
+					</ul>
+				</div>
+				{/block:Chat}
+				{block:Answer}
+				<div class="answer">
+					<h3>{Question}</h3>
+					 <p><strong>Asked by {Asker}</strong></p>
+					{Answer}
+				</div>
+				{/block:Answer}
+				
+			</div>
+			{/block:Posts}
+				{block:Pagination}
+				<div id="pagination">
+					<p class="previous-next">
+						{block:PreviousPage}<a href="{PreviousPage}" class="prev">Prev </a>{/block:PreviousPage}	
+						<span class="pages">{CurrentPage} / {TotalPages}</span>
+						{block:NextPage}<a href="{NextPage}" class="next">Next</a>{/block:NextPage}			
+					</p>
+				</div>
+				{/block:Pagination}
+			</div><!--End Content-->
+			<div class="clear push"></div>
+		</div><!--End Wrapper-->
+		<div id="footer">
+			{block:IndexPage}<p id="legal">{block:IfShowThemeName}<a href="http://davesantos.com/futurismo">Futurismo</a>{/block:IfShowThemeName}{block:IfNotShowThemeName}Built{/block:IfNotShowThemeName} by <a href="http://davesantos.com">Dave Santos</a></p>{/block:IndexPage}	
+		</div>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+		<script type="text/javascript" src="http://static.tumblr.com/n2yg7bp/ObBkxzihy/all.js"></script>
+		<script type="text/javascript">Cufon.replace('h1, h2, h3, .quote blockquote');</script>
+		<script type="text/javascript">Cufon.now();</script>
+    </body>
+</html>
